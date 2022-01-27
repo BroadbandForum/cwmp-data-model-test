@@ -1,0 +1,6 @@
+<!-- <h1 class="unnumbered unlisted new-page display-none" id="sec:executive-summary">Executive Summary<a class="headerlink" href="01-index-executive-summary.html#sec:executive-summary" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h1> -->
+
+<p>In order to ensure the continued growth of the TR-069 market and further the interoperability of the protocol, the Broadband Forum is creating a TR-069 Certification Program. Within this program, devices implementing a TR-069 management interface may be tested for their conformance to the TR-069 specification and various use cases. The TR-069 Certification Program started with the TR-069 Conformance Test Plan and now the CWMP Data Model Implementation Test Plan. To provide a consistent scope for this verification, BBF developed these test plans that are to be used by the testing agencies in the verification process.</p>
+
+<p>This Test Plan provides a test plan that may be used to verify Interoperability of a CPE Device with an ACS Server through use cases.</p>
+

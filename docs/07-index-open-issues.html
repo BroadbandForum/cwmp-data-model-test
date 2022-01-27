@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- BBF GitHub Pages pandoc template; modified from default.html template -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="generator" content="pandoc"/>
+  <meta name="description" content="TP-181 – CPE WAN Management Protocol (TR-069): CWMP Interoperability and Functionality Test Plan"/>
+  <meta name="theme-color" content="#157878"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+  <title>BBF – 6 Open Issues</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="github.css"/>
+  <link rel="stylesheet" href="extra.css"/>
+  <link rel="stylesheet" href="toc.css"/>
+  <link rel="stylesheet" href="release.css"/>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- XXX header includes are included just before the ToC (below) -->
+</head>
+
+<body>
+  <section class="page-header">
+    <h1 class="project-name">
+      <a href="index.html" style="text-decoration: none; color: white;">
+        <img src="bbflogo-bw.png"/><br>
+        CPE WAN Management Protocol (TR-069)
+      </a>
+    </h1>
+    <h2 class="project-tagline">CWMP Interoperability and Functionality Test Plan</h2>
+    <p>TP-181 Issue 1 Amendment 2</p>
+    <p></p>
+    <div class="project-buttons">
+      <a class="btn" href="index.htm" title="TP-181 Single-file HTML">HTML</a>
+      <a class="btn" href="index.pdf" title="TP-181 PDF">PDF</a>
+      <a class="btn" href="https://cwmp-data-models.broadband-forum.org" title="CWMP Data Models">Data Models</a>
+      <a class="btn" href="https://www.broadband-forum.org/technical/download/TR-069.pdf" title="TR-069 PDF">TR-069</a>
+    </div>
+  </section>
+
+  <section class="main-content">
+<nav>
+<p>
+   <a href="00-index-contents.html#contents">Cover Page</a>
+ | <a href="01-index-executive-summary.html#sec:executive-summary">Executive Summary</a>
+ | <a href="02-index-purpose-and-scope.html#sec:purpose-and-scope">1 Purpose and Scope</a>
+ | <a href="03-index-references-and-terminology.html#sec:references-and-terminology">2 References and Terminology</a>
+ | <a href="04-index-bbftype-impact.html#sec:bbftype-impact">3 Test Plan Impact</a>
+ | <a href="05-index-test-setup.html#sec:test-setup">4 Test Setup</a>
+ | <a href="06-index-test-procedures.html#sec:test-procedures">5 Test Procedures</a>
+ | <a href="07-index-open-issues.html#sec:open-issues">6 Open Issues</a>
+</p>
+</nav>
+
+<nav id="TOCFULL">
+<ul>
+  <li><a href="00-index-contents.html#contents">Cover Page</a></li>
+  <li><a href="02-index-purpose-and-scope.html#sec:purpose-and-scope">1 Purpose and Scope</a></li>
+  <ul>
+    <li><a href="02-index-purpose-and-scope.html#sec:purpose">1.1 Purpose</a></li>
+    <li><a href="02-index-purpose-and-scope.html#sec:scope">1.2 Scope</a></li>
+    <li><a href="02-index-purpose-and-scope.html#sec:test-execution">1.3 Test Execution</a></li>
+  </ul>
+  <li><a href="03-index-references-and-terminology.html#sec:references-and-terminology">2 References and Terminology</a></li>
+  <ul>
+    <li><a href="03-index-references-and-terminology.html#sec:conventions">2.1 Conventions</a></li>
+    <li><a href="03-index-references-and-terminology.html#sec:references">2.2 References</a></li>
+    <li><a href="03-index-references-and-terminology.html#sec:abbreviations">2.3 Abbreviations</a></li>
+  </ul>
+  <li><a href="04-index-bbftype-impact.html#sec:bbftype-impact">3 Test Plan Impact</a></li>
+  <ul>
+    <li><a href="04-index-bbftype-impact.html#sec:energy-efficiency">3.1 Energy Efficiency</a></li>
+    <li><a href="04-index-bbftype-impact.html#sec:ipv6">3.2 IPv6</a></li>
+    <li><a href="04-index-bbftype-impact.html#sec:security">3.3 Security</a></li>
+  </ul>
+  <li><a href="05-index-test-setup.html#sec:test-setup">4 Test Setup</a></li>
+  <ul>
+    <li><a href="05-index-test-setup.html#sec:test-equipment">4.1 Test Equipment</a></li>
+    <li><a href="05-index-test-setup.html#sec:test-setup-and-execution">4.2 Test Setup and Execution</a></li>
+    <ul>
+      <li><a href="05-index-test-setup.html#sec:common-test-setup">4.2.1 Common Test Setup</a></li>
+      <li><a href="05-index-test-setup.html#sec:determine-wan-interface">4.2.2 Determine WAN Interface</a></li>
+      <li><a href="05-index-test-setup.html#sec:test-execution-1">4.2.3 Test Execution</a></li>
+    </ul>
+    <li><a href="05-index-test-setup.html#sec:cpe-test-requirements-and-prerequisites">4.3 CPE Test Requirements and Prerequisites</a></li>
+    <li><a href="05-index-test-setup.html#sec:acs-test-requirements">4.4 ACS Test Requirements</a></li>
+    <li><a href="05-index-test-setup.html#sec:interoperability-testing">4.5 Interoperability Testing</a></li>
+    <li><a href="05-index-test-setup.html#sec:test-validation">4.6 Test Validation</a></li>
+  </ul>
+  <li><a href="06-index-test-procedures.html#sec:test-procedures">5 Test Procedures</a></li>
+  <ul>
+    <li><a href="06-index-test-procedures.html#sec:basic-setup">5.1 Basic Setup</a></li>
+    <ul>
+      <li><a href="06-index-test-procedures.html#sec:factory-reset">5.1.1 Factory Reset</a></li>
+      <li><a href="06-index-test-procedures.html#sec:time-setting-device2-only">5.1.2 Time Setting (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:time-setting-internetgatewaydevice1-only">5.1.3 Time Setting (InternetGatewayDevice:1 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:firmware-download">5.1.4 Firmware Download</a></li>
+      <li><a href="06-index-test-procedures.html#sec:getrpcmethods">5.1.5 GetRPCMethods</a></li>
+      <li><a href="06-index-test-procedures.html#sec:configuration-backup-and-restoration">5.1.6 Configuration Backup and Restoration</a></li>
+      <li><a href="06-index-test-procedures.html#sec:ppp-interface-change">5.1.7 PPP Interface Change</a></li>
+      <li><a href="06-index-test-procedures.html#sec:dhcp-provisioning">5.1.8 DHCP Provisioning</a></li>
+      <li><a href="06-index-test-procedures.html#sec:spv-on-a-boolean-parameter">5.1.9 SPV on a Boolean Parameter</a></li>
+      <li><a href="06-index-test-procedures.html#sec:encrypted-connection">5.1.10 Encrypted Connection</a></li>
+      <li><a href="06-index-test-procedures.html#sec:getparameternames-vendor-specific-parameters">5.1.11 GetParameterNames Vendor Specific Parameters</a></li>
+      <li><a href="06-index-test-procedures.html#sec:setparametervalues-vendor-specific-parameters">5.1.12 SetParameterValues Vendor Specific Parameters</a></li>
+    </ul>
+    <li><a href="06-index-test-procedures.html#sec:diagnostics">5.2 Diagnostics</a></li>
+    <ul>
+      <li><a href="06-index-test-procedures.html#sec:diagnostics-ipping">5.2.1 Diagnostics IPPing</a></li>
+      <li><a href="06-index-test-procedures.html#sec:download-diagnostics-over-http">5.2.2 Download Diagnostics over HTTP</a></li>
+      <li><a href="06-index-test-procedures.html#sec:download-diagnostics-over-ftp">5.2.3 Download Diagnostics over FTP</a></li>
+      <li><a href="06-index-test-procedures.html#sec:upload-diagnostics-over-http">5.2.4 Upload Diagnostics over HTTP</a></li>
+      <li><a href="06-index-test-procedures.html#sec:upload-diagnostics-over-ftp">5.2.5 Upload Diagnostics over FTP</a></li>
+      <li><a href="06-index-test-procedures.html#sec:traceroute">5.2.6 TraceRoute</a></li>
+      <li><a href="06-index-test-procedures.html#sec:udpecho-test">5.2.7 UDPEcho Test</a></li>
+    </ul>
+    <li><a href="06-index-test-procedures.html#sec:statistics-and-monitoring">5.3 Statistics and Monitoring</a></li>
+    <ul>
+      <li><a href="06-index-test-procedures.html#sec:current-interface-configuration-device2-only">5.3.1 Current Interface Configuration (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:connected-lan-devices-internetgatewaydevice1-only">5.3.2 Connected LAN Devices (InternetGatewayDevice:1 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:connected-lan-devices-wi-fi-device2-only">5.3.3 Connected LAN Devices – Wi-Fi (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:connected-lan-devices-dhcp-device2-only">5.3.4 Connected LAN Devices – DHCP (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:device-connectdisconnect-notification-test">5.3.5 Device Connect/Disconnect Notification Test</a></li>
+    </ul>
+    <li><a href="06-index-test-procedures.html#sec:port-mappings">5.4 Port Mappings</a></li>
+    <ul>
+      <li><a href="06-index-test-procedures.html#sec:create-a-port-mapping-single-interface">5.4.1 Create a Port Mapping – Single Interface</a></li>
+      <li><a href="06-index-test-procedures.html#sec:create-a-port-mapping-all-interfaces-device2-only">5.4.2 Create a Port Mapping – All Interfaces (Device:2 only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:create-a-port-mapping-external-port-range">5.4.3 Create a Port Mapping – External Port Range</a></li>
+      <li><a href="06-index-test-procedures.html#sec:create-a-port-mapping-lease-duration-0">5.4.4 Create a Port Mapping – Lease Duration &gt; 0</a></li>
+      <li><a href="06-index-test-procedures.html#sec:create-a-port-mapping-remote-host-restriction">5.4.5 Create a Port Mapping – Remote Host Restriction</a></li>
+      <li><a href="06-index-test-procedures.html#sec:create-a-port-mapping-multiple-entries-precedence-rules">5.4.6 Create a Port Mapping – Multiple Entries – Precedence Rules</a></li>
+      <li><a href="06-index-test-procedures.html#sec:modify-a-port-mapping">5.4.7 Modify a Port Mapping</a></li>
+      <li><a href="06-index-test-procedures.html#sec:delete-a-port-mapping">5.4.8 Delete a Port Mapping</a></li>
+      <li><a href="06-index-test-procedures.html#sec:create-a-port-mapping-tcp">5.4.9 Create a Port Mapping – TCP</a></li>
+    </ul>
+    <li><a href="06-index-test-procedures.html#sec:advanced-firewall">5.5 Advanced Firewall</a></li>
+    <ul>
+      <li><a href="06-index-test-procedures.html#sec:default-policy-device2-only">5.5.1 Default Policy (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:denyallow-outbound-protocols-device2-only">5.5.2 Deny/Allow Outbound Protocols (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:denyallow-outbound-ports-device2-only">5.5.3 Deny/Allow Outbound Ports (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:denyallow-source-ip-address-device2-only">5.5.4 Deny/Allow Source IP Address (Device:2 Only)</a></li>
+    </ul>
+    <li><a href="06-index-test-procedures.html#sec:wi-fi-provisioning">5.6 Wi-Fi Provisioning</a></li>
+    <ul>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wep-64-internetgatewaydevice1-only">5.6.1 Wi-Fi Setup WEP 64 (InternetGatewayDevice:1 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wep-128-internetgatewaydevice1-only">5.6.2 Wi-Fi Setup WEP 128 (InternetGatewayDevice:1 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa-personal-internetgatewaydevice1-only">5.6.3 Wi-Fi Setup WPA Personal (InternetGatewayDevice:1 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa2-personal-internetgatewaydevice1-only">5.6.4 Wi-Fi Setup WPA2 Personal (InternetGatewayDevice:1 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa-wpa2-personal-internetgatewaydevice1-only">5.6.5 Wi-Fi Setup WPA-WPA2 Personal (InternetGatewayDevice:1 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wep-64-device2-only">5.6.6 Wi-Fi Setup WEP 64 (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wep-128-device2-only">5.6.7 Wi-Fi Setup WEP 128 (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa-personal-device2-only">5.6.8 Wi-Fi Setup WPA Personal (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa-enterprise-device2-only">5.6.9 Wi-Fi Setup WPA Enterprise (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa2-personal-device2-only">5.6.10 Wi-Fi Setup WPA2 Personal (Device:2 only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa2-enterprise-device2-only">5.6.11 Wi-Fi Setup WPA2 Enterprise (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa-wpa2-personal-device2-only">5.6.12 Wi-Fi Setup WPA-WPA2 Personal (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa-wpa2-enterprise-device2-only">5.6.13 Wi-Fi Setup WPA-WPA2 Enterprise (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa3-personal-device2-only">5.6.14 Wi-Fi Setup WPA3 Personal (Device:2 only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa3-personal-transition-device2-only">5.6.15 Wi-Fi Setup WPA3-Personal-Transition (Device:2 only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-wpa3-enterprise-device2-only">5.6.16 Wi-Fi Setup WPA3-Enterprise (Device:2 only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-add-ssid-device2-only">5.6.17 Wi-Fi Setup – Add SSID (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:wi-fi-setup-remove-ssid-device2-only">5.6.18 Wi-Fi Setup – Remove SSID (Device:2 Only)</a></li>
+    </ul>
+    <li><a href="06-index-test-procedures.html#sec:localized-strings">5.7 Localized Strings</a></li>
+    <ul>
+      <li><a href="06-index-test-procedures.html#sec:non-printable-ascii-characters-in-setparametervalues-rpc-device2-only">5.7.1 Non-Printable ASCII Characters in SetParameterValues RPC (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:multi-byte-encoding-in-setparametervalues-rpc-device2-only">5.7.2 Multi-Byte Encoding in SetParameterValues RPC (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:non-ascii-characters-in-parameterkey-device2-only">5.7.3 Non-ASCII Characters in ParameterKey (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:multi-byte-encoding-in-parameterkey-device2-only">5.7.4 Multi-Byte Encoding in ParameterKey (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:non-ascii-characters-in-commandkey-device2-only">5.7.5 Non-ASCII Characters in CommandKey (Device:2 Only)</a></li>
+      <li><a href="06-index-test-procedures.html#sec:multi-byte-encoding-in-commandkey-device2-only">5.7.6 Multi-Byte Encoding in CommandKey (Device:2 Only)</a></li>
+    </ul>
+    <li><a href="06-index-test-procedures.html#sec:configuration-backup-and-restore-incorrect-backup-file">5.8 Configuration Backup and Restore – Incorrect Backup File</a></li>
+    <li><a href="06-index-test-procedures.html#sec:dhcp-provisioning-disable-dhcp">5.9 DHCP Provisioning – Disable DHCP</a></li>
+    <li><a href="06-index-test-procedures.html#sec:diagnostics-ipping-error-condition">5.10 Diagnostics IPPing – Error Condition</a></li>
+    <li><a href="06-index-test-procedures.html#sec:traceroute-diagnostics-error-condition">5.11 TraceRoute Diagnostics – Error Condition</a></li>
+    <li><a href="06-index-test-procedures.html#sec:ipping-diagnostics-periodic-inform">5.12 IPPing Diagnostics – Periodic Inform</a></li>
+    <li><a href="06-index-test-procedures.html#sec:denyallow-inbound-ipv6-device2-only">5.13 Deny/Allow Inbound IPv6 (Device:2 Only)</a></li>
+    <li><a href="06-index-test-procedures.html#sec:download-diagnostics-over-https-totalbytesreceived">5.14 Download Diagnostics over HTTPS – TotalBytesReceived</a></li>
+    <li><a href="06-index-test-procedures.html#sec:upload-diagnostics-over-http---totalbytessent">5.15 Upload Diagnostics over HTTP - TotalBytesSent</a></li>
+  </ul>
+  <li><a href="07-index-open-issues.html#sec:open-issues">6 Open Issues</a></li>
+</ul>
+</nav>
+
+    <header id="title-block-header">
+      <h1 class="title" id="sec:open-issues">6 Open Issues<a href="#sec:open-issues" class="headerlink" title="Permalink to this header"> <img src="permalink.png" style="width: 0.8em"/></a></h1>
+    </header>
+<table>
+<thead>
+<tr class="header header">
+<th style="text-align: left;">Item #</th>
+<th style="text-align: left;">Item Description</th>
+<th style="text-align: left;">Reference(s)</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd odd">
+<td style="text-align: left;">Item x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<p>End of Broadband Forum Test Plan TP-181</p>
+</div>
+    <div style="clear: both;"/>
+    <footer class="site-footer">
+<nav>
+<p>
+   <a href="00-index-contents.html#contents">Cover Page</a>
+ | <a href="01-index-executive-summary.html#sec:executive-summary">Executive Summary</a>
+ | <a href="02-index-purpose-and-scope.html#sec:purpose-and-scope">1 Purpose and Scope</a>
+ | <a href="03-index-references-and-terminology.html#sec:references-and-terminology">2 References and Terminology</a>
+ | <a href="04-index-bbftype-impact.html#sec:bbftype-impact">3 Test Plan Impact</a>
+ | <a href="05-index-test-setup.html#sec:test-setup">4 Test Setup</a>
+ | <a href="06-index-test-procedures.html#sec:test-procedures">5 Test Procedures</a>
+ | <a href="07-index-open-issues.html#sec:open-issues">6 Open Issues</a>
+</p>
+</nav>
+
+      <span class="site-footer-owner">
+        TP-181 is developed and maintained
+        by <a href="https://www.broadband-forum.org">The Broadband Forum</a>.
+        &copy; The Broadband Forum 2022</a>. All Rights Reserved.
+      </span>
+      <span class="site-footer-credits">
+        This page was generated by <a href="https://pandoc.org">pandoc</a>
+        and <a href="https://pages.github.com">GitHub Pages</a>.
+        View the <a href="https://github.com/BroadbandForum/cwmp-data-model-test">specification source on GitHub</a>.
+        <span class="release"/>
+      </span>
+    </footer>
+  </section>
+</body>
+</html>

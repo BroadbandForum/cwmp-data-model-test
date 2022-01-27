@@ -1,0 +1,278 @@
+<!-- <h1 class="new-page display-none" id="sec:test-setup">4 Test Setup<a class="headerlink" href="05-index-test-setup.html#sec:test-setup" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h1> -->
+
+<h2 id="sec:test-equipment">4.1 Test Equipment<a class="headerlink" href="05-index-test-setup.html#sec:test-equipment" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>The necessary set of test equipment to deliver reliable and repeatable test results is specified in <a href='05-index-test-setup.html#tbl:required-test-equipment' title='' class="table">Table 1</a>.</p>
+
+<div id="tbl:required-test-equipment">
+<table>
+<caption>Table 1: Required Test Equipment<a class="headerlink" href="05-index-test-setup.html#tbl:required-test-equipment" title="Permalink to this table"> <img src='permalink.png' title='' width="0.8em"/></a></caption>
+<col width="14%" />
+<col width="86%" />
+<tr class="header">
+<th align="left">Test Equipment</th>
+<th align="left">Description and Functional Capabilities</th>
+</tr>
+<tr class="odd">
+<td align="left">ACS</td>
+<td align="left">The ACS is an interoperability partner in this test plan</td>
+</tr>
+<tr class="even">
+<td align="left">Traffic Analyzer</td>
+<td align="left">To verify certain test metrics, Traffic Analyzers MUST be present between the CPE and ACS and between the CPE and any LAN Device</td>
+</tr>
+<tr class="odd">
+<td align="left">Access Node</td>
+<td align="left">For infrastructure needs, an Access Node will be provided to bridge connections between the CPE and ACS</td>
+</tr>
+<tr class="even">
+<td align="left">File Server</td>
+<td align="left">The File Server MUST support HTTP PUT &amp; GET, as well as FTP PUT &amp; GET</td>
+</tr>
+<tr class="odd">
+<td align="left">CPE</td>
+<td align="left">The CPE is an interoperability partner in this test plan</td>
+</tr>
+<tr class="even">
+<td align="left">Network Router</td>
+<td align="left">There may be one or more Network Routers between the CPE &amp; ACS. If the CPE is a LAN CPE, one Network Router may be configured to provide a Network Address Translation (NAT) function</td>
+</tr>
+<tr class="odd">
+<td align="left">Firewall</td>
+<td align="left">The Firewall MUST support the ability to selectively block traffic based on IP address</td>
+</tr>
+<tr class="even">
+<td align="left">NTP Server</td>
+<td align="left">Two NTP Servers. Public NTP Servers such as NIST Internet Time Servers may be used</td>
+</tr>
+<tr class="odd">
+<td align="left">RADIUS Server</td>
+<td align="left">To authenticate end devices in WPA Enterprise test cases</td>
+</tr>
+<tr class="even">
+<td align="left">DHCP Server</td>
+<td align="left">To assign addresses and other provisioning information to the CPE on the WAN</td>
+</tr>
+<tr class="odd">
+<td align="left">DNS Server</td>
+<td align="left">To resolve addresses on the WAN</td>
+</tr>
+<tr class="even">
+<td align="left">LAN Device</td>
+<td align="left">To connect to the LAN side of a Gateway CPE</td>
+</tr>
+<tr class="odd">
+<td align="left">Wireless LAN Device</td>
+<td align="left">To connect to the LAN side of a Gateway CPE over wireless</td>
+</tr>
+</table></div>
+
+<h2 id="sec:test-setup-and-execution">4.2 Test Setup and Execution<a class="headerlink" href="05-index-test-setup.html#sec:test-setup-and-execution" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>The Interoperability test setup is shown below in <a href='05-index-test-setup.html#fig:common-topology-for-interoperability-testing' title='' class="figure">Figure 1</a>. The following pieces of test equipment needs to be connected to the Internet and reachable over IP, but there is no other topology requirement: ACS, DHCP Server, DNS Server, File Server, NTP Server, RADIUS Server. The Access Node may not be required if the primary CPE connection is Ethernet.</p>
+
+<figure>
+<img src="images/common-topology-for-interoperability-testing.png" id="fig:common-topology-for-interoperability-testing" alt=""/>
+<figcaption>Figure 1: Common Topology for Interoperability Testing<a class="headerlink" href="05-index-test-setup.html#fig:common-topology-for-interoperability-testing" title="Permalink to this figure"> <img src='permalink.png' title='' width="0.8em"/></a></figcaption>
+</figure>
+
+<h3 id="sec:common-test-setup">4.2.1 Common Test Setup<a class="headerlink" href="05-index-test-setup.html#sec:common-test-setup" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h3>
+
+<p>This section describes the test setup shared between all test cases. Any additional setup steps will be described in the &ldquo;Test Setup&rdquo; section of the test case.</p>
+
+<ol>
+<li><p>ACS is connected to the network</p></li>
+<li><p>CPE is connected to the network and configured with an ACS URL that corresponds to the ACS in step 1.</p></li>
+<li><p>Have a Network Analyzer to capture traffic between ACS and CPE.</p></li>
+</ol>
+
+<h3 id="sec:determine-wan-interface">4.2.2 Determine WAN Interface<a class="headerlink" href="05-index-test-setup.html#sec:determine-wan-interface" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h3>
+
+<p>This section describes steps to determine the WAN interface of a device. These steps are referenced in the Test Procedures.</p>
+
+<p>For CPE that support the Device:2 data model:</p>
+
+<ul>
+<li>The ACS performs a GetParameterNames RPC on the Interface table. The interface with the WAN IP address is the WAN interface.</li>
+</ul>
+
+<p>For CPE that support the InternetGatewayDevice:1 root data model <span class="cite" data-citation-ids="TR-098"><a href='03-index-references-and-terminology.html#ref-TR-098' title=''>[9]</a></span>:</p>
+
+<ul>
+<li>The ACS performs a GetParameterValues RPC on InternetGatewayDevice.Layer3Forwarding.DefaultConnectionService. This will return the WAN interface.</li>
+</ul>
+
+<h3 id="sec:test-execution-1">4.2.3 Test Execution<a class="headerlink" href="05-index-test-setup.html#sec:test-execution-1" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h3>
+
+<p>Each test is defined as a separate entity that can be run independent of all other test procedures. These tests, performed sequentially, may cause changes to the ACS &amp; CPE states during the course of testing.</p>
+
+<div class="note">
+<p>If a CPE returns a status of 1 in a SetParameterValuesResponse or an AddObjectResponse, the following steps MUST be followed:</p>
+
+<ol>
+<li><p>Terminate the CWMP session.</p></li>
+<li><p>Configure the ACS to issue a connection request.</p></li>
+<li><p>Configure the ACS to issue a GetParameterValues RPC for the changed variable(s) and verify that they are correct.</p></li>
+</ol></div>
+
+<h2 id="sec:cpe-test-requirements-and-prerequisites">4.3 CPE Test Requirements and Prerequisites<a class="headerlink" href="05-index-test-setup.html#sec:cpe-test-requirements-and-prerequisites" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<ol>
+<li><p>OD-361 section 3.4.4 <span class="cite" data-citation-ids="OD-361"><a href='03-index-references-and-terminology.html#ref-OD-361' title=''>[2]</a></span> states that passing IR-069i2 <span class="cite" data-citation-ids="IR-069i2"><a href='03-index-references-and-terminology.html#ref-IR-069i2' title=''>[1]</a></span> is a prerequisite for a CPE undergoing this test plan.</p></li>
+<li><p>Each test case includes a References section that refers to a version of a data model definition or other standard document. For all Broadband Forum data models and Broadband Forum Technical Reports, the test case references the earliest version the CPE can support to run the test case.</p></li>
+<li><p>Each test case includes a Profiles section that includes the profiles needed to run the test case. Any additional requirements are included in the Optional Features section. If the CPE supports the profile and the optional feature listed, the test case MUST be run.</p>
+
+<ul>
+<li><p><strong>Note:</strong> For test cases that require Baseline:1 or Baseline:2 support, the CPE MUST support each parameter listed in the test case, but does not need to support each parameter in the profile.</p></li>
+<li><p>A list of test cases by profile is included below. Note, there may be additional parameters required or required parameter values. Refer to the test case for complete information.</p></li>
+</ul></li>
+</ol>
+
+<table>
+<col width="50%" />
+<col width="50%" />
+<tr class="header">
+<th align="left">Device:2 Profile</th>
+<th align="left">Applicable Tests</th>
+</tr>
+<tr class="odd">
+<td align="left">None</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:getrpcmethods' title='' class="heading">5.1.5 GetRPCMethods</a><br/><a href='06-index-test-procedures.html#sec:encrypted-connection' title='' class="heading">5.1.10 Encrypted Connection</a></td>
+</tr>
+<tr class="even">
+<td align="left">Baseline:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:factory-reset' title='' class="heading">5.1.1 Factory Reset</a><br/><a href='06-index-test-procedures.html#sec:firmware-download' title='' class="heading">5.1.4 Firmware Download</a><br/><a href='06-index-test-procedures.html#sec:configuration-backup-and-restoration' title='' class="heading">5.1.6 Configuration Backup and Restoration</a><br/><a href='06-index-test-procedures.html#sec:spv-on-a-boolean-parameter' title='' class="heading">5.1.9 SPV on a Boolean Parameter</a><br/><a href='06-index-test-procedures.html#sec:non-printable-ascii-characters-in-setparametervalues-rpc-device2-only' title='' class="heading">5.7.1 Non-Printable ASCII Characters in SetParameterValues RPC (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:multi-byte-encoding-in-setparametervalues-rpc-device2-only' title='' class="heading">5.7.2 Multi-Byte Encoding in SetParameterValues RPC (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:non-ascii-characters-in-parameterkey-device2-only' title='' class="heading">5.7.3 Non-ASCII Characters in ParameterKey (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:multi-byte-encoding-in-parameterkey-device2-only' title='' class="heading">5.7.4 Multi-Byte Encoding in ParameterKey (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:non-ascii-characters-in-commandkey-device2-only' title='' class="heading">5.7.5 Non-ASCII Characters in CommandKey (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:multi-byte-encoding-in-commandkey-device2-only' title='' class="heading">5.7.6 Multi-Byte Encoding in CommandKey (Device:2 Only)</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Time:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:time-setting-device2-only' title='' class="heading">5.1.2 Time Setting (Device:2 Only)</a></td>
+</tr>
+<tr class="even">
+<td align="left">PPPInterface:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:ppp-interface-change' title='' class="heading">5.1.7 PPP Interface Change</a></td>
+</tr>
+<tr class="odd">
+<td align="left">DHCPv4Server:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:dhcp-provisioning' title='' class="heading">5.1.8 DHCP Provisioning</a></td>
+</tr>
+<tr class="even">
+<td align="left">Vendor specific parameters</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:getparameternames-vendor-specific-parameters' title='' class="heading">5.1.11 GetParameterNames Vendor Specific Parameters</a><br/><a href='06-index-test-procedures.html#sec:setparametervalues-vendor-specific-parameters' title='' class="heading">5.1.12 SetParameterValues Vendor Specific Parameters</a></td>
+</tr>
+<tr class="odd">
+<td align="left">IPPing:1 OR IPPingDetailed:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:diagnostics-ipping' title='' class="heading">5.2.1 Diagnostics IPPing</a></td>
+</tr>
+<tr class="even">
+<td align="left">Download:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:download-diagnostics-over-http' title='' class="heading">5.2.2 Download Diagnostics over HTTP</a><br/><a href='06-index-test-procedures.html#sec:download-diagnostics-over-ftp' title='' class="heading">5.2.3 Download Diagnostics over FTP</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Upload:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:upload-diagnostics-over-http' title='' class="heading">5.2.4 Upload Diagnostics over HTTP</a><br/><a href='06-index-test-procedures.html#sec:upload-diagnostics-over-ftp' title='' class="heading">5.2.5 Upload Diagnostics over FTP</a></td>
+</tr>
+<tr class="even">
+<td align="left">TraceRoute:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:traceroute' title='' class="heading">5.2.6 TraceRoute</a></td>
+</tr>
+<tr class="odd">
+<td align="left">UDPEcho:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:udpecho-test' title='' class="heading">5.2.7 UDPEcho Test</a></td>
+</tr>
+<tr class="even">
+<td align="left">Baseline:2, IPInterface:1, EtherenetInterface:1, WiFiSSID:1, WiFiRadio:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:current-interface-configuration-device2-only' title='' class="heading">5.3.1 Current Interface Configuration (Device:2 Only)</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Hosts:2</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:connected-lan-devices-wi-fi-device2-only' title='' class="heading">5.3.3 Connected LAN Devices – Wi-Fi (Device:2 Only)</a></td>
+</tr>
+<tr class="even">
+<td align="left">Hosts:2, DHCPv4ServerClientInfo:1, DHCPv6ServerClientInfo</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:connected-lan-devices-dhcp-device2-only' title='' class="heading">5.3.4 Connected LAN Devices – DHCP (Device:2 Only)</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Hosts:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:device-connectdisconnect-notification-test' title='' class="heading">5.3.5 Device Connect/Disconnect Notification Test</a></td>
+</tr>
+<tr class="even">
+<td align="left">NAT:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:create-a-port-mapping-single-interface' title='' class="heading">5.4.1 Create a Port Mapping – Single Interface</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-all-interfaces-device2-only' title='' class="heading">5.4.2 Create a Port Mapping – All Interfaces (Device:2 only)</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-external-port-range' title='' class="heading">5.4.3 Create a Port Mapping – External Port Range</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-lease-duration-0' title='' class="heading">5.4.4 Create a Port Mapping – Lease Duration &gt; 0</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-remote-host-restriction' title='' class="heading">5.4.5 Create a Port Mapping – Remote Host Restriction</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-multiple-entries-precedence-rules' title='' class="heading">5.4.6 Create a Port Mapping – Multiple Entries – Precedence Rules</a><br/><a href='06-index-test-procedures.html#sec:modify-a-port-mapping' title='' class="heading">5.4.7 Modify a Port Mapping</a><br/><a href='06-index-test-procedures.html#sec:delete-a-port-mapping' title='' class="heading">5.4.8 Delete a Port Mapping</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-tcp' title='' class="heading">5.4.9 Create a Port Mapping – TCP</a></td>
+</tr>
+<tr class="odd">
+<td align="left">AdvancedFirewall:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:default-policy-device2-only' title='' class="heading">5.5.1 Default Policy (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:denyallow-outbound-protocols-device2-only' title='' class="heading">5.5.2 Deny/Allow Outbound Protocols (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:denyallow-outbound-ports-device2-only' title='' class="heading">5.5.3 Deny/Allow Outbound Ports (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:denyallow-source-ip-address-device2-only' title='' class="heading">5.5.4 Deny/Allow Source IP Address (Device:2 Only)</a></td>
+</tr>
+<tr class="even">
+<td align="left">WiFiRadio:1, WiFiSSID:1, WiFiAccessPoint:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:wi-fi-setup-wep-64-device2-only' title='' class="heading">5.6.6 Wi-Fi Setup WEP 64 (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wep-128-device2-only' title='' class="heading">5.6.7 Wi-Fi Setup WEP 128 (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa-personal-device2-only' title='' class="heading">5.6.8 Wi-Fi Setup WPA Personal (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa-enterprise-device2-only' title='' class="heading">5.6.9 Wi-Fi Setup WPA Enterprise (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa2-personal-device2-only' title='' class="heading">5.6.10 Wi-Fi Setup WPA2 Personal (Device:2 only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa2-enterprise-device2-only' title='' class="heading">5.6.11 Wi-Fi Setup WPA2 Enterprise (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa-wpa2-personal-device2-only' title='' class="heading">5.6.12 Wi-Fi Setup WPA-WPA2 Personal (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa-wpa2-enterprise-device2-only' title='' class="heading">5.6.13 Wi-Fi Setup WPA-WPA2 Enterprise (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa3-personal-device2-only' title='' class="heading">5.6.14 Wi-Fi Setup WPA3 Personal (Device:2 only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa3-personal-transition-device2-only' title='' class="heading">5.6.15 Wi-Fi Setup WPA3-Personal-Transition (Device:2 only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa3-enterprise-device2-only' title='' class="heading">5.6.16 Wi-Fi Setup WPA3-Enterprise (Device:2 only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-add-ssid-device2-only' title='' class="heading">5.6.17 Wi-Fi Setup – Add SSID (Device:2 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-remove-ssid-device2-only' title='' class="heading">5.6.18 Wi-Fi Setup – Remove SSID (Device:2 Only)</a></td>
+</tr>
+</table>
+
+<table>
+<col width="50%" />
+<col width="50%" />
+<tr class="header">
+<th align="left">InternetGatewayDevice:1 Profile</th>
+<th align="left">Applicable Tests</th>
+</tr>
+<tr class="odd">
+<td align="left">None</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:getrpcmethods' title='' class="heading">5.1.5 GetRPCMethods</a><br/><a href='06-index-test-procedures.html#sec:encrypted-connection' title='' class="heading">5.1.10 Encrypted Connection</a></td>
+</tr>
+<tr class="even">
+<td align="left">Baseline:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:factory-reset' title='' class="heading">5.1.1 Factory Reset</a><br/><a href='06-index-test-procedures.html#sec:firmware-download' title='' class="heading">5.1.4 Firmware Download</a><br/><a href='06-index-test-procedures.html#sec:configuration-backup-and-restoration' title='' class="heading">5.1.6 Configuration Backup and Restoration</a><br/><a href='06-index-test-procedures.html#sec:spv-on-a-boolean-parameter' title='' class="heading">5.1.9 SPV on a Boolean Parameter</a><br/><a href='06-index-test-procedures.html#sec:device-connectdisconnect-notification-test' title='' class="heading">5.3.5 Device Connect/Disconnect Notification Test</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-single-interface' title='' class="heading">5.4.1 Create a Port Mapping – Single Interface</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-external-port-range' title='' class="heading">5.4.3 Create a Port Mapping – External Port Range</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-lease-duration-0' title='' class="heading">5.4.4 Create a Port Mapping – Lease Duration &gt; 0</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-remote-host-restriction' title='' class="heading">5.4.5 Create a Port Mapping – Remote Host Restriction</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-multiple-entries-precedence-rules' title='' class="heading">5.4.6 Create a Port Mapping – Multiple Entries – Precedence Rules</a><br/><a href='06-index-test-procedures.html#sec:modify-a-port-mapping' title='' class="heading">5.4.7 Modify a Port Mapping</a><br/><a href='06-index-test-procedures.html#sec:delete-a-port-mapping' title='' class="heading">5.4.8 Delete a Port Mapping</a><br/><a href='06-index-test-procedures.html#sec:create-a-port-mapping-tcp' title='' class="heading">5.4.9 Create a Port Mapping – TCP</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Time:2</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:time-setting-internetgatewaydevice1-only' title='' class="heading">5.1.3 Time Setting (InternetGatewayDevice:1 Only)</a></td>
+</tr>
+<tr class="even">
+<td align="left">Baseline:2</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:ppp-interface-change' title='' class="heading">5.1.7 PPP Interface Change</a><br/><a href='06-index-test-procedures.html#sec:connected-lan-devices-internetgatewaydevice1-only' title='' class="heading">5.3.2 Connected LAN Devices (InternetGatewayDevice:1 Only)</a><br/><a href='06-index-test-procedures.html#sec:dhcp-provisioning' title='' class="heading">5.1.8 DHCP Provisioning</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Vendor specific parameters</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:getparameternames-vendor-specific-parameters' title='' class="heading">5.1.11 GetParameterNames Vendor Specific Parameters</a><br/><a href='06-index-test-procedures.html#sec:setparametervalues-vendor-specific-parameters' title='' class="heading">5.1.12 SetParameterValues Vendor Specific Parameters</a></td>
+</tr>
+<tr class="even">
+<td align="left">Baseline:1, IPPing:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:diagnostics-ipping' title='' class="heading">5.2.1 Diagnostics IPPing</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Download:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:download-diagnostics-over-http' title='' class="heading">5.2.2 Download Diagnostics over HTTP</a><br/><a href='06-index-test-procedures.html#sec:download-diagnostics-over-ftp' title='' class="heading">5.2.3 Download Diagnostics over FTP</a></td>
+</tr>
+<tr class="even">
+<td align="left">Upload:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:upload-diagnostics-over-http' title='' class="heading">5.2.4 Upload Diagnostics over HTTP</a><br/><a href='06-index-test-procedures.html#sec:upload-diagnostics-over-ftp' title='' class="heading">5.2.5 Upload Diagnostics over FTP</a></td>
+</tr>
+<tr class="odd">
+<td align="left">TraceRoute:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:traceroute' title='' class="heading">5.2.6 TraceRoute</a></td>
+</tr>
+<tr class="even">
+<td align="left">UDPEcho:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:udpecho-test' title='' class="heading">5.2.7 UDPEcho Test</a></td>
+</tr>
+<tr class="odd">
+<td align="left">WiFiLan:1</td>
+<td align="left"><a href='06-index-test-procedures.html#sec:wi-fi-setup-wep-64-internetgatewaydevice1-only' title='' class="heading">5.6.1 Wi-Fi Setup WEP 64 (InternetGatewayDevice:1 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wep-128-internetgatewaydevice1-only' title='' class="heading">5.6.2 Wi-Fi Setup WEP 128 (InternetGatewayDevice:1 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa-personal-internetgatewaydevice1-only' title='' class="heading">5.6.3 Wi-Fi Setup WPA Personal (InternetGatewayDevice:1 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa2-personal-internetgatewaydevice1-only' title='' class="heading">5.6.4 Wi-Fi Setup WPA2 Personal (InternetGatewayDevice:1 Only)</a><br/><a href='06-index-test-procedures.html#sec:wi-fi-setup-wpa-wpa2-personal-internetgatewaydevice1-only' title='' class="heading">5.6.5 Wi-Fi Setup WPA-WPA2 Personal (InternetGatewayDevice:1 Only)</a></td>
+</tr>
+</table>
+
+<h2 id="sec:acs-test-requirements">4.4 ACS Test Requirements<a class="headerlink" href="05-index-test-setup.html#sec:acs-test-requirements" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>The ACS MUST be configurable to include an interface that allows control of the ACS to execute the test procedures.
+An API SHOULD be provided to the test lab to support automation of this test plan.
+The ACS MUST allow its certificates to be configured.</p>
+
+<h2 id="sec:interoperability-testing">4.5 Interoperability Testing<a class="headerlink" href="05-index-test-setup.html#sec:interoperability-testing" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>This test plan tests the ACS/CPE system, therefore a failure may indicate a deficiency from either the ACS or CPE.</p>
+
+<h2 id="sec:test-validation">4.6 Test Validation<a class="headerlink" href="05-index-test-setup.html#sec:test-validation" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>A test is considered successful (or passed) when the corresponding test procedure has been completed and the specified success metrics are attained. Tests can be validated by observing functional changes in the DUTs, through feedback interfaces on the devices under test, results attained from the ACS, and via a Traffic Analyzer connected to the relevant links.</p>
+

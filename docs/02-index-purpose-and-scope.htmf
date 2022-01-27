@@ -1,0 +1,14 @@
+<!-- <h1 class="new-page display-none" id="sec:purpose-and-scope">1 Purpose and Scope<a class="headerlink" href="02-index-purpose-and-scope.html#sec:purpose-and-scope" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h1> -->
+
+<h2 id="sec:purpose">1.1 Purpose<a class="headerlink" href="02-index-purpose-and-scope.html#sec:purpose" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>The purpose of this document is to provide a set of use test cases, which will be used as a common testing language during Interoperability testing of a CPE Device with an ACS Server.</p>
+
+<h2 id="sec:scope">1.2 Scope<a class="headerlink" href="02-index-purpose-and-scope.html#sec:scope" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>The tests detailed in this document are only intended to facilitate TR-069 interoperability use case testing. The tests in this document are limited to ACSs and CWMP enabled CPE devices.</p>
+
+<h2 id="sec:test-execution">1.3 Test Execution<a class="headerlink" href="02-index-purpose-and-scope.html#sec:test-execution" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>The tests detailed in this document are to be run in a controlled environment. There is no specified order to the tests in this document.</p>
+

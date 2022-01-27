@@ -1,0 +1,228 @@
+<!-- <h1 class="new-page display-none" id="sec:references-and-terminology">2 References and Terminology<a class="headerlink" href="03-index-references-and-terminology.html#sec:references-and-terminology" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h1> -->
+
+<h2 id="sec:conventions">2.1 Conventions<a class="headerlink" href="03-index-references-and-terminology.html#sec:conventions" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>In this Test Plan, several words are used to signify the requirements of the specification. These words are always capitalized. More information can be found be in RFC 2119 <span class="cite" data-citation-ids="RFC2119"><a href='03-index-references-and-terminology.html#ref-RFC2119' title=''>[4]</a></span>.</p>
+
+<table>
+<col width="20%" />
+<col width="80%" />
+<tr class="odd">
+<td align="left"><strong>MUST</strong></td>
+<td align="left">This word, or the terms &ldquo;REQUIRED&rdquo;, means that the definition is an absolute requirement of the specification.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>MUST NOT</strong></td>
+<td align="left">This phrase means that the definition is an absolute prohibition of the specification.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>SHOULD</strong></td>
+<td align="left">This word, or the adjective &ldquo;RECOMMENDED&rdquo;, means that there could exist valid reasons in particular circumstances to ignore this item, but the full implications need to be understood and carefully weighed before choosing a different course.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>SHOULD NOT</strong></td>
+<td align="left">This phrase, or the phrase &ldquo;NOT RECOMMENDED&rdquo; means that there could exist valid reasons in particular circumstances when the particular behavior is acceptable or even useful, but the full implications need to be understood and the case carefully weighed before implementing any behavior described with this label.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>MAY</strong></td>
+<td align="left">This word, or the adjective &ldquo;OPTIONAL&rdquo;, means that this item is one of an allowed set of alternatives. An implementation that does not include this option MUST be prepared to inter-operate with another implementation that does include the option.</td>
+</tr>
+</table>
+
+<h2 id="sec:references">2.2 References<a class="headerlink" href="03-index-references-and-terminology.html#sec:references" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>The following references are of relevance to this Test Plan. At the time of publication, the editions indicated were valid. All references are subject to revision; users of this Test Plan are therefore encouraged to investigate the possibility of applying the most recent edition of the references listed below, including any released amendments or corrigendum materials.</p>
+
+<p>A list of currently valid Broadband Forum Technical Reports is published at <a href='http://www.broadband-forum.org' title=''>www.broadband-forum.org</a>.</p>
+
+<div class="references csl-bib-body" id="refs">
+<div class="csl-entry" id="ref-IR-069i2">
+<p><span class="csl-left-margin">[1] </span><span class="csl-right-inline"><u>IR-069 Issue 2</u>, <em>TR-069 Conformance Test Plan</em>, Broadband Forum, 2016</span></p></div>
+
+<div class="csl-entry" id="ref-OD-361">
+<p><span class="csl-left-margin">[2] </span><span class="csl-right-inline"><u>OD-361</u>, <em>CWMP Certification Program Guidelines</em>, Broadband Forum, 2016</span></p></div>
+
+<div class="csl-entry" id="ref-REC-xml">
+<p><span class="csl-left-margin">[3] </span><span class="csl-right-inline"><a href='https://www.w3.org/TR/xml' title=''>REC-xml</a>, <em>Extensible Markup Language (XML) 1.0 (Fifth Edition)</em>, W3C, 2008</span></p></div>
+
+<div class="csl-entry" id="ref-RFC2119">
+<p><span class="csl-left-margin">[4] </span><span class="csl-right-inline"><a href='https://www.rfc-editor.org/rfc/rfc2119.html' title=''>RFC 2119</a>, <em>Key words for use in RFCs to Indicate Requirement Levels</em>, IETF, 1997</span></p></div>
+
+<div class="csl-entry" id="ref-RFC2131">
+<p><span class="csl-left-margin">[5] </span><span class="csl-right-inline"><a href='https://www.rfc-editor.org/rfc/rfc2131.html' title=''>RFC 2131</a>, <em>Dynamic Host Configuration Protocol</em>, IETF</span></p></div>
+
+<div class="csl-entry" id="ref-RFC2132">
+<p><span class="csl-left-margin">[6] </span><span class="csl-right-inline"><a href='https://www.rfc-editor.org/rfc/rfc2132.html' title=''>RFC 2132</a>, <em>DHCP Options and BOOTP Vendor Extensions</em>, IETF</span></p></div>
+
+<div class="csl-entry" id="ref-RFC3315">
+<p><span class="csl-left-margin">[7] </span><span class="csl-right-inline"><a href='https://www.rfc-editor.org/rfc/rfc3315.html' title=''>RFC 3315</a>, <em>Dynamic Host Configuration Protocol for IPv6 (DHCPv6)</em>, IETF, 2003</span></p></div>
+
+<div class="csl-entry" id="ref-TR-069">
+<p><span class="csl-left-margin">[8] </span><span class="csl-right-inline"><a href='https://www.broadband-forum.org/technical/download/TR-069.pdf' title=''>TR-069 Amendment 6</a>, <em>CPE WAN Management Protocol</em>, Broadband Forum, 2018</span></p></div>
+
+<div class="csl-entry" id="ref-TR-098">
+<p><span class="csl-left-margin">[9] </span><span class="csl-right-inline"><a href='https://www.broadband-forum.org/technical/download/TR-098.pdf' title=''>TR-098 Amendment 2 Corrigendum 1</a>, <em>Internet Gateway Device Data Model for TR-069</em>, Broadband Forum, 2014</span></p></div>
+
+<div class="csl-entry" id="ref-TR-181">
+<p><span class="csl-left-margin">[10] </span><span class="csl-right-inline"><a href='https://usp-data-models.broadband-forum.org#Device:2' title=''>TR-181 Issue 2</a>, <em>Device Data Model</em>, Broadband Forum</span></p></div></div>
+
+<h2 id="sec:abbreviations">2.3 Abbreviations<a class="headerlink" href="03-index-references-and-terminology.html#sec:abbreviations" title="Permalink to this header"> <img src='permalink.png' title='' width="0.8em"/></a></h2>
+
+<p>This Test Plan uses the following abbreviations:</p>
+
+<div class="borderless">
+<table>
+<tr class="odd">
+<td align="left">ACS</td>
+<td align="left">Auto-Configuration Server</td>
+</tr>
+<tr class="even">
+<td align="left">CN</td>
+<td align="left">Common Name</td>
+</tr>
+<tr class="odd">
+<td align="left">CPE</td>
+<td align="left">Customer Premise Equipment</td>
+</tr>
+<tr class="even">
+<td align="left">CWMP</td>
+<td align="left">CPE WAN Management Protocol</td>
+</tr>
+<tr class="odd">
+<td align="left">DHCP</td>
+<td align="left">Dynamic Host Configuration Protocol</td>
+</tr>
+<tr class="even">
+<td align="left">DNS</td>
+<td align="left">Domain Name System</td>
+</tr>
+<tr class="odd">
+<td align="left">DSLAM</td>
+<td align="left">DSL Access Multiplexer</td>
+</tr>
+<tr class="even">
+<td align="left">DUT</td>
+<td align="left">Device Under Test</td>
+</tr>
+<tr class="odd">
+<td align="left">FTP</td>
+<td align="left">File transfer Protocol</td>
+</tr>
+<tr class="even">
+<td align="left">HTTP</td>
+<td align="left">Hypertext Transfer Protocol</td>
+</tr>
+<tr class="odd">
+<td align="left">HTTPS</td>
+<td align="left">Hypertext Transfer Protocol over Secure Socket Layer</td>
+</tr>
+<tr class="even">
+<td align="left">ID</td>
+<td align="left">Identifier</td>
+</tr>
+<tr class="odd">
+<td align="left">IP</td>
+<td align="left">Internet Protocol</td>
+</tr>
+<tr class="even">
+<td align="left">IPv6</td>
+<td align="left">Internet Protocol version 6</td>
+</tr>
+<tr class="odd">
+<td align="left">LAN</td>
+<td align="left">Local Area Network</td>
+</tr>
+<tr class="even">
+<td align="left">NAT</td>
+<td align="left">Network Address Translation</td>
+</tr>
+<tr class="odd">
+<td align="left">NTP</td>
+<td align="left">Network Time Protocol</td>
+</tr>
+<tr class="even">
+<td align="left">RFC</td>
+<td align="left">Request for Proposal</td>
+</tr>
+<tr class="odd">
+<td align="left">RPC</td>
+<td align="left">Remote Procedure Call</td>
+</tr>
+<tr class="even">
+<td align="left">SOAP</td>
+<td align="left">Simple Object Access Protocol</td>
+</tr>
+<tr class="odd">
+<td align="left">SSL</td>
+<td align="left">Secure Socket Layer</td>
+</tr>
+<tr class="even">
+<td align="left">STB</td>
+<td align="left">Set Top Box</td>
+</tr>
+<tr class="odd">
+<td align="left">STUN</td>
+<td align="left">Session Traversal Utilities for NAT</td>
+</tr>
+<tr class="even">
+<td align="left">TCP</td>
+<td align="left">Transmission Control Protocol</td>
+</tr>
+<tr class="odd">
+<td align="left">TFTP</td>
+<td align="left">Trivial File transfer Protocol</td>
+</tr>
+<tr class="even">
+<td align="left">TLS</td>
+<td align="left">Transport Layer Security</td>
+</tr>
+<tr class="odd">
+<td align="left">TR</td>
+<td align="left">Technical Report</td>
+</tr>
+<tr class="even">
+<td align="left">TTL</td>
+<td align="left">Time to Live</td>
+</tr>
+<tr class="odd">
+<td align="left">UDP</td>
+<td align="left">User Datagram Protocol,</td>
+</tr>
+<tr class="even">
+<td align="left">URL</td>
+<td align="left">Universal Resource Locator</td>
+</tr>
+<tr class="odd">
+<td align="left">URN</td>
+<td align="left">Uniform Resource Name</td>
+</tr>
+<tr class="even">
+<td align="left">UTC</td>
+<td align="left">Coordinated Universal Time</td>
+</tr>
+<tr class="odd">
+<td align="left">UTF</td>
+<td align="left">Universal Multiple-Octet Coded Character Set Transformation Format</td>
+</tr>
+<tr class="even">
+<td align="left">UUID</td>
+<td align="left">Universally Unique Identifier</td>
+</tr>
+<tr class="odd">
+<td align="left">VoIP</td>
+<td align="left">Voice over Internet Protocol</td>
+</tr>
+<tr class="even">
+<td align="left">WAN</td>
+<td align="left">Wide Area Network</td>
+</tr>
+<tr class="odd">
+<td align="left">XML</td>
+<td align="left">Extensible Markup Language</td>
+</tr>
+<tr class="even">
+<td align="left">WA</td>
+<td align="left">Work Area</td>
+</tr>
+</table></div>
+
